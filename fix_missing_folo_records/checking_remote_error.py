@@ -39,6 +39,9 @@ print count
 print len(array)
 print len(subarr)
 
+# construct the linux find command that can be executed on upshift env
 #for sub in subarr:
-#  print sub    
+#  print 'find hosted-*' + sub + '/* -name *' + sub[sub.rfind("/")+1:] + '.jar'    
 
+for path in array:
+  print 'find hosted-*' + path + ' -name ' + path[path.rfind("/")+1:]
