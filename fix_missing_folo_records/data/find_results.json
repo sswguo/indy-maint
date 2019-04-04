@@ -1,0 +1,10 @@
+[
+{
+"path":"/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.8.9.redhat-1/jackson-dataformat-yaml-2.8.9.redhat-1.jar",
+"repo":"hosted-build_jackson-data-fromat-yaml-2-8-9_20171013.0933/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.8.9.redhat-1/jackson-dataformat-yaml-2.8.9.redhat-1.jar"
+},
+{
+"path":"/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.8.9.redhat-1/jackson-dataformat-yaml-2.8.9.redhat-1.pom",
+"repo":"hosted-build_jackson-data-fromat-yaml-2-8-9_20171013.0933/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.8.9.redhat-1/jackson-dataformat-yaml-2.8.9.redhat-1.pom"
+}
+]
