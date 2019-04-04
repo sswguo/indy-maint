@@ -26,7 +26,7 @@ for file in os.listdir(DIR):
       data = json.load(f)
       for download in data['downloads']:
         if ( "maven:remote:" == download['storeKey'] ):
-          print download['localUrl']
+          #print download['localUrl']
           count = count + 1
           path = download['path']
           subparent = path[0:path.rfind('/')]
@@ -43,5 +43,15 @@ print len(subarr)
 #for sub in subarr:
 #  print 'find hosted-*' + sub + '/* -name *' + sub[sub.rfind("/")+1:] + '.jar'    
 
-for path in array:
-  print 'find hosted-*' + path + ' -name ' + path[path.rfind("/")+1:]
+FIND_FILE = "find_command.sh"
+  #print 'find hosted-*' + path + ' -name ' + path[path.rfind("/")+1:]
+with open(DIR+FIND_FILE, 'a') as w:
+  w.truncate(0)
+  w.write('cd /var/lib/indy/storage/maven\n')
+  w.write('echo "["\n')
+  for path in array:
+    w.write('echo "{"\n')
+    w.write('echo "\\"path\\":\\"' + path + '\\","\n') 
+    w.write('echo "\\"repo\\":\\"$(find hosted-build_*' + path + ' -name ' + path[path.rfind("/")+1:] + ')\\""\n')
+    w.write('echo "}",\n')
+  w.write('echo "]"\n')
