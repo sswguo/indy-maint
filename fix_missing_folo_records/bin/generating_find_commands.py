@@ -1,7 +1,7 @@
 import json
 import os
 import time
-import sys
+import argparse
 
 # picking the path up if the storeKey is "maven:remote:", see following examples:
 # 
@@ -17,10 +17,16 @@ import sys
 #    "size" : 17614
 # }
 
-print sys.argv[1]
+parser = argparse.ArgumentParser()
+parser.add_argument('-d','--json-file-dir', help='The directory of json file', required=True)
+parser.add_argument('-o','--output-file-dir', help='The directory of generted command file', required=False)
+
+args = parser.parse_args()
+
 #DIR="../data/"
 #DIR="../data/replaced-1554699433455/replaced-1554700727934/"
-DIR=sys.argv[1]
+
+DIR=args.json_file_dir
 
 if DIR == "":
   print "Please specify the input dir:"

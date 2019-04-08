@@ -8,7 +8,7 @@
 4. Generated the find commands that can be executed in cloud env
    ````
    cd bin
-   python generating_find_commands.py
+   python generating_find_commands.py -d <dir that containing the json files>
    ````
 5. Exec the find commands in cloud env and grab the output
 6. Replacing the data based on the cloud output
