@@ -18,7 +18,8 @@ import time
 
 DIR="../data/"
 
-JSON_RESULT_FILE="find_results.json"
+INPUT_DIR='../data/replaced-1554699433455/'
+JSON_RESULT_FILE="find_results_2.json"
 
 count = 0
 
@@ -27,7 +28,7 @@ with open(DIR+JSON_RESULT_FILE, 'r+') as jf:
 
 milliseconds = int(round(time.time() * 1000))
 
-for file in os.listdir(DIR):
+for file in os.listdir(INPUT_DIR):
   if file.endswith('.json'):
     with open(DIR+file, 'r+') as f:
       #print file

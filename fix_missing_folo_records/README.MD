@@ -17,3 +17,4 @@
    python replace_remote_with_hosted.py
    ````
 
+transfer: used to rsync the files between local and cloud  

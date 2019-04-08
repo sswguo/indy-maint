@@ -17,7 +17,7 @@ import time
 # }
 
 #DIR="../data/"
-DIR="../data/replaced-1554699433455/"
+DIR="../data/replaced-1554699433455/replaced-1554700727934/"
 BIN_DIR="./"
 count = 0
 array = []
