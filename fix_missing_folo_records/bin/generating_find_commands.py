@@ -1,6 +1,7 @@
 import json
 import os
 import time
+import sys
 
 # picking the path up if the storeKey is "maven:remote:", see following examples:
 # 
@@ -16,8 +17,15 @@ import time
 #    "size" : 17614
 # }
 
+print sys.argv[1]
 #DIR="../data/"
-DIR="../data/replaced-1554699433455/replaced-1554700727934/"
+#DIR="../data/replaced-1554699433455/replaced-1554700727934/"
+DIR=sys.argv[1]
+
+if DIR == "":
+  print "Please specify the input dir:"
+  raise
+
 BIN_DIR="./"
 count = 0
 array = []
@@ -46,7 +54,6 @@ print len(subarr)
 
 # construct the linux find command that can be executed on upshift env
 #for sub in subarr:
-#  print 'find hosted-*' + sub + '/* -name *' + sub[sub.rfind("/")+1:] + '.jar'    
 
 milliseconds = int(round(time.time() * 1000))
 
