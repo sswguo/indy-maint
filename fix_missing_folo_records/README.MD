@@ -14,7 +14,7 @@
 6. Replacing the data based on the cloud output
    ````
    cd bin
-   python replace_remote_with_hosted.py
+   python replace_remote_with_hosted.py -s <source dir that containing the json files> -i <base file generated from cloud env>
    ````
 
 transfer: used to rsync the files between local and cloud  

@@ -1,6 +1,7 @@
 import json
 import os
 import time
+import argparse
 
 # picking the path up if the storeKey is "maven:remote:", see following examples:
 # 
@@ -16,10 +17,19 @@ import time
 #    "size" : 17614
 # }
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-s','--source-file-dir', help='The directory of source json file', required=True)
+parser.add_argument('-i','--base-file', help='The result generated from cloud env', required=True)
+parser.add_argument('-o','--output-file-dir', help='The directory of ourput file', required=False)
+
+args = parser.parse_args()
+
 DIR="../data/"
 
-INPUT_DIR='../data/replaced-1554699433455/'
-JSON_RESULT_FILE="find_results_2.json"
+#INPUT_DIR='../data/replaced-1554699433455/'
+INPUT_DIR=args.source_file_dir
+#JSON_RESULT_FILE="find_results_2.json"
+JSON_RESULT_FILE=args.base_file
 
 count = 0
 
@@ -30,7 +40,7 @@ milliseconds = int(round(time.time() * 1000))
 
 for file in os.listdir(INPUT_DIR):
   if file.endswith('.json'):
-    with open(DIR+file, 'r+') as f:
+    with open(INPUT_DIR+file, 'r+') as f:
       #print file
       data = json.load(f)
       try:
