@@ -18,3 +18,6 @@
    ````
 
 transfer: used to rsync the files between local and cloud  
+````
+oc rsync --progress  $POD:/tmp/file.txt data/
+````
