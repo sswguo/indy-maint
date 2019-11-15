@@ -1,0 +1,16 @@
+{
+  "responseHeaders" : {
+    "CONNECTION" : [ "Keep-Alive" ],
+    "DATE" : [ "Sat, 25 May 2019 21:29:17 GMT" ],
+    "TRANSFER-ENCODING" : [ "chunked" ],
+    "SERVER" : [ "Nexus/2.11.2-06" ],
+    "ACCEPT-RANGES" : [ "bytes" ],
+    "X-CONTENT-TYPE-OPTIONS" : [ "nosniff" ],
+    "CONTENT-TYPE" : [ "text/html" ],
+    "X-FRAME-OPTIONS" : [ "SAMEORIGIN" ],
+    "KEEP-ALIVE" : [ "timeout=15, max=100" ]
+  },
+  "responseStatusMessage" : "Not Found",
+  "responseStatusCode" : 404,
+  "contentType" : "text/html"
+}
