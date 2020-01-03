@@ -1,0 +1,69 @@
+{
+  
+    "request" : {
+      "async" : false,
+      "promotionId" : "c35d81e3-04f3-4c92-a8d1-a238316d0a38",
+      "source" : "maven:hosted:build-38527",
+      "target" : "maven:hosted:pnc-builds",
+      "paths" : [],
+      "purgeSource" : false,
+      "dryRun" : false,
+      "fireEvents" : false,
+      "failWhenExists" : false,
+      "targetKey" : "maven:hosted:pnc-builds"
+    },
+    "completedPaths":
+    [
+        
+        "/org/jbpm/jbpm-wb-common-client/7.30.0.Final-redhat-00003/jbpm-wb-common-client-7.30.0.Final-redhat-00003.jar.md5",
+        "/org/jbpm/jbpm-wb-dashboard-backend/7.30.0.Final-redhat-00003/jbpm-wb-dashboard-backend-7.30.0.Final-redhat-00003-sources.jar.md5",
+        "/org/jbpm/jbpm-wb-dashboard-backend/7.30.0.Final-redhat-00003/jbpm-wb-dashboard-backend-7.30.0.Final-redhat-00003-test-sources.jar.md5",
+        "/org/jbpm/jbpm-wb-dashboard-backend/7.30.0.Final-redhat-00003/jbpm-wb-dashboard-backend-7.30.0.Final-redhat-00003-tests.jar.md5",
+        "/org/jbpm/jbpm-wb-data-filters-client/7.30.0.Final-redhat-00003/jbpm-wb-data-filters-client-7.30.0.Final-redhat-00003-sources.jar",
+        "/org/jbpm/jbpm-wb-human-tasks-backend/7.30.0.Final-redhat-00003/jbpm-wb-human-tasks-backend-7.30.0.Final-redhat-00003.pom",
+        "/org/jbpm/jbpm-wb-executor-service-backend/7.30.0.Final-redhat-00003/jbpm-wb-executor-service-backend-7.30.0.Final-redhat-00003-test-sources.jar",
+        "/org/jbpm/jbpm-wb-common-client/7.30.0.Final-redhat-00003/jbpm-wb-common-client-7.30.0.Final-redhat-00003.pom",
+        "/org/jbpm/jbpm-wb-case-mgmt-client/7.30.0.Final-redhat-00003/jbpm-wb-case-mgmt-client-7.30.0.Final-redhat-00003.jar",
+        "/org/jbpm/jbpm-wb-integration-backend/7.30.0.Final-redhat-00003/jbpm-wb-integration-backend-7.30.0.Final-redhat-00003-tests.jar",
+        "/org/jbpm/jbpm-wb-showcase/7.30.0.Final-redhat-00003/jbpm-wb-showcase-7.30.0.Final-redhat-00003-test-sources.jar",
+        "/org/jbpm/jbpm-wb-human-tasks-client/7.30.0.Final-redhat-00003/jbpm-wb-human-tasks-client-7.30.0.Final-redhat-00003-test-sources.jar",
+        "/org/jbpm/jbpm-wb-case-mgmt-client/7.30.0.Final-redhat-00003/jbpm-wb-case-mgmt-client-7.30.0.Final-redhat-00003-sources.jar",
+        "/org/jbpm/jbpm-wb-showcase/7.30.0.Final-redhat-00003/jbpm-wb-showcase-7.30.0.Final-redhat-00003-javadoc.jar",
+        "/org/jbpm/jbpm-wb-common-api/7.30.0.Final-redhat-00003/jbpm-wb-common-api-7.30.0.Final-redhat-00003.jar",
+        "/org/jbpm/jbpm-wb-human-tasks-client/7.30.0.Final-redhat-00003/jbpm-wb-human-tasks-client-7.30.0.Final-redhat-00003-tests.jar",
+        "/org/jbpm/jbpm-wb-kie-server-api/7.30.0.Final-redhat-00003/jbpm-wb-kie-server-api-7.30.0.Final-redhat-00003-javadoc.jar",
+        "/org/jbpm/jbpm-wb-case-mgmt-showcase/7.30.0.Final-redhat-00003/jbpm-wb-case-mgmt-showcase-7.30.0.Final-redhat-00003-wildfly14.war",
+        "/org/jbpm/jbpm-wb-executor-service-backend/7.30.0.Final-redhat-00003/jbpm-wb-executor-service-backend-7.30.0.Final-redhat-00003-sources.jar",
+        "/org/jbpm/jbpm-wb-case-mgmt-api/7.30.0.Final-redhat-00003/jbpm-wb-case-mgmt-api-7.30.0.Final-redhat-00003.pom.sha1",
+        "/org/jbpm/jbpm-wb-case-mgmt-client/7.30.0.Final-redhat-00003/jbpm-wb-case-mgmt-client-7.30.0.Final-redhat-00003.pom.md5",
+        "/org/jbpm/jbpm-wb-common-api/7.30.0.Final-redhat-00003/jbpm-wb-common-api-7.30.0.Final-redhat-00003.pom.sha1",
+        "/org/jbpm/jbpm-wb-dashboard-api/7.30.0.Final-redhat-00003/jbpm-wb-dashboard-api-7.30.0.Final-redhat-00003.pom.sha1",
+        "/org/jbpm/jbpm-wb-dashboard-client/7.30.0.Final-redhat-00003/jbpm-wb-dashboard-client-7.30.0.Final-redhat-00003.pom.md5",
+        "/org/jbpm/jbpm-wb-data-filters-client/7.30.0.Final-redhat-00003/jbpm-wb-data-filters-client-7.30.0.Final-redhat-00003-javadoc.jar.md5",
+        "/org/jbpm/jbpm-wb-data-filters-client/7.30.0.Final-redhat-00003/jbpm-wb-data-filters-client-7.30.0.Final-redhat-00003.jar.sha1",
+        "/org/jbpm/jbpm-wb-executor-service-backend/7.30.0.Final-redhat-00003/jbpm-wb-executor-service-backend-7.30.0.Final-redhat-00003-tests.jar.md5",
+        "/org/jbpm/jbpm-wb-executor-service-client/7.30.0.Final-redhat-00003/jbpm-wb-executor-service-client-7.30.0.Final-redhat-00003-sources.jar.sha1",
+        "/org/jbpm/jbpm-wb-executor-service-client/7.30.0.Final-redhat-00003/jbpm-wb-executor-service-client-7.30.0.Final-redhat-00003.pom.sha1",
+        "/org/jbpm/jbpm-wb-forms-backend/7.30.0.Final-redhat-00003/jbpm-wb-forms-backend-7.30.0.Final-redhat-00003.pom.md5",
+        "/org/jbpm/jbpm-wb-forms-client/7.30.0.Final-redhat-00003/jbpm-wb-forms-client-7.30.0.Final-redhat-00003-test-sources.jar.sha1",
+        "/org/jbpm/jbpm-wb-forms-client/7.30.0.Final-redhat-00003/jbpm-wb-forms-client-7.30.0.Final-redhat-00003-tests.jar.md5",
+        "/org/jbpm/jbpm-wb-human-tasks-api/7.30.0.Final-redhat-00003/jbpm-wb-human-tasks-api-7.30.0.Final-redhat-00003.pom.sha1",
+        "/org/jbpm/jbpm-wb-human-tasks-backend/7.30.0.Final-redhat-00003/jbpm-wb-human-tasks-backend-7.30.0.Final-redhat-00003-sources.jar.md5",
+        "/org/jbpm/jbpm-wb-human-tasks-client/7.30.0.Final-redhat-00003/jbpm-wb-human-tasks-client-7.30.0.Final-redhat-00003.jar.sha1",
+        "/org/jbpm/jbpm-wb-human-tasks/7.30.0.Final-redhat-00003/jbpm-wb-human-tasks-7.30.0.Final-redhat-00003.pom.sha1",
+        "/org/jbpm/jbpm-wb-integration-api/7.30.0.Final-redhat-00003/jbpm-wb-integration-api-7.30.0.Final-redhat-00003-javadoc.jar.md5",
+        "/org/jbpm/jbpm-wb-integration-api/7.30.0.Final-redhat-00003/jbpm-wb-integration-api-7.30.0.Final-redhat-00003-tests.jar.md5",
+        "/org/jbpm/jbpm-wb-integration-client/7.30.0.Final-redhat-00003/jbpm-wb-integration-client-7.30.0.Final-redhat-00003-test-sources.jar.md5",
+        "/org/jbpm/jbpm-wb-integration/7.30.0.Final-redhat-00003/jbpm-wb-integration-7.30.0.Final-redhat-00003.pom.md5",
+        "/org/jbpm/jbpm-wb-kie-server-api/7.30.0.Final-redhat-00003/jbpm-wb-kie-server-api-7.30.0.Final-redhat-00003-sources.jar.md5",
+        "/org/jbpm/jbpm-wb-kie-server-backend/7.30.0.Final-redhat-00003/jbpm-wb-kie-server-backend-7.30.0.Final-redhat-00003-test-sources.jar.sha1",
+        "/org/jbpm/jbpm-wb-process-runtime-api/7.30.0.Final-redhat-00003/jbpm-wb-process-runtime-api-7.30.0.Final-redhat-00003-sources.jar.md5",
+        "/org/jbpm/jbpm-wb-process-runtime-client/7.30.0.Final-redhat-00003/jbpm-wb-process-runtime-client-7.30.0.Final-redhat-00003-javadoc.jar.sha1",
+        "/org/jbpm/jbpm-wb-process-runtime/7.30.0.Final-redhat-00003/jbpm-wb-process-runtime-7.30.0.Final-redhat-00003.pom.md5",
+        "/org/jbpm/jbpm-wb-showcase/7.30.0.Final-redhat-00003/jbpm-wb-showcase-7.30.0.Final-redhat-00003-sources.jar.md5",
+        "/org/jbpm/jbpm-wb/7.30.0.Final-redhat-00003/jbpm-wb-7.30.0.Final-redhat-00003.pom.sha1"
+
+
+
+    ]
+}
