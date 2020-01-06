@@ -3,7 +3,7 @@
 - DA Lookup GAVs
 
 ````
-go run da_lookup.go
+go run da_lookup.go localhost:8080
 ````
 
 - Get folo paths
