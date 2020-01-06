@@ -47,17 +47,16 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	log.Println(string(jsonResult))
+	//log.Println(string(jsonResult))
 
 	fmt.Println(len(result.Uploads))
 
 	var paths []string
 	for i := range result.Uploads {
 		temp := result.Uploads[i].Path
-		fmt.Println(temp)
 		paths = append(paths, temp)
 	}
 
-	pathsJson, _ := json.Marshal(paths)
+	pathsJson, _ := json.MarshalIndent(paths, "", "\t")
 	fmt.Println(string(pathsJson))
 }

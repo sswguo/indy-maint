@@ -36,11 +36,11 @@ type Versions struct {
  Lookup the match versions
 */
 func main() {
-	da_host := os.Args[1]
+	daHost := os.Args[1]
 
 	params := BeforePost()
 
-	url := fmt.Sprintf("http://%s/da/rest/v-1/reports/lookup/gavs", da_host)
+	url := fmt.Sprintf("http://%s/da/rest/v-1/reports/lookup/gavs", daHost)
 	body := Post(url, params)
 	AfterPost(body)
 }
