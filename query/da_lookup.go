@@ -7,9 +7,10 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
 
-type LookUp struct {
+type LookUpReq struct {
 	RepositoryGroup string `json:"repositoryGroup"`
 	VersionSuffix   string `json:"versionSuffix"`
 	Gavs            []Gavs `json:"gavs"`
@@ -31,10 +32,34 @@ type Versions struct {
 	Whitelisted       []string `json:whitelisted`
 }
 
+/*
+ Lookup the match versions
+*/
 func main() {
-	url := "http://<DA.HOST>/da/rest/v-1/reports/lookup/gavs"
+	da_host := os.Args[1]
 
-	params := &LookUp{
+	params := BeforePost()
+
+	url := fmt.Sprintf("http://%s/da/rest/v-1/reports/lookup/gavs", da_host)
+	body := Post(url, params)
+	AfterPost(body)
+}
+
+/**
+ * {
+	"repositoryGroup":"DA",
+	"versionSuffix":"",
+	"gavs":[
+		{
+			"groupId":"org.jbpm",
+			"artifactId":"jbpm-wb",
+			"version":"7.30.0.Final"
+		}
+	]
+}
+*/
+func BeforePost() interface{} {
+	return &LookUpReq{
 		RepositoryGroup: "DA",
 		//VersionSuffix:   "",
 		Gavs: []Gavs{
@@ -45,6 +70,10 @@ func main() {
 			},
 		},
 	}
+}
+
+/* Basic marshal and http request operation */
+func Post(url string, params interface{}) []byte {
 
 	request, err := json.Marshal(params)
 	if err != nil {
@@ -58,12 +87,16 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	var result []Versions
-
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatalln(err)
 	}
+
+	return body
+}
+
+func AfterPost(body []byte) {
+	var result []Versions
 
 	json.Unmarshal(body, &result)
 
@@ -73,5 +106,4 @@ func main() {
 		log.Fatalln(err)
 	}
 	log.Println(string(jsonResult))
-
 }
