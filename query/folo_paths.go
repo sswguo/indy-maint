@@ -47,7 +47,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	//log.Println(string(jsonResult))
+	log.Println(string(jsonResult))
 
 	fmt.Println(len(result.Uploads))
 
