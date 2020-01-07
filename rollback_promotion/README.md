@@ -30,7 +30,7 @@ Figure out the hosted build id and the artifact list that had been promoted, and
 }
 ````
 
-Then run the rollback REATAPI to complete it:
+Then run the rollback RESTAPI to complete it:
 
 ````
 curl -X POST --header 'Content-Type: application/json' -H 'Authorization: Bearer <Token>' --header 'Accept: application/json' -d @rollback_38527.json 'http://localhost:8080/api/promotion/paths/rollback'
