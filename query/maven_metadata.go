@@ -20,7 +20,7 @@ func main() {
 
 	gavSlices := strings.Split(gav, ":")
 
-	groupPath := strings.Replace(gavSlices[0], ".", "/", 1)
+	groupPath := strings.Replace(gavSlices[0], ".", "/", -1)
 	artifactID := gavSlices[1]
 
 	pncBuildsURL := fmt.Sprintf("http://%s/api/group/pnc-builds/%s/%s/maven-metadata.xml", indyHost, groupPath, artifactID)
