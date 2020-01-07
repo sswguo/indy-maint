@@ -6,7 +6,7 @@
 go run da_lookup.go <DAHOST> org.jbpm:jbpm-wb:7.30.0.Final 
 ````
 
-- Indy Check Maven metadata
+- Indy Check Maven metadata ( against group pnc-builds and DA )
 ````
 go run maven_metadata.go <INDYHOST> org.jbpm:jbpm-wb:7.30.0.Final
 ````

@@ -9,7 +9,11 @@ import (
 	"strings"
 )
 
-/* Checking maven metadata: go run maven_metadata.go localhost:8080 org.jbpm:jbpm-wb:7.30.0.Final */
+/* Checking maven metadata against group pnc-builds and DA: 
+   
+   go run maven_metadata.go localhost:8080 org.jbpm:jbpm-wb:7.30.0.Final 
+	
+*/
 func main() {
 	indyHost := os.Args[1]
 	gav := os.Args[2]
@@ -19,11 +23,17 @@ func main() {
 	groupPath := strings.Replace(gavSlices[0], ".", "/", 1)
 	artifactID := gavSlices[1]
 
-	repoType := "hosted"
-	repo := "pnc-builds"
+	pncBuildsURL := fmt.Sprintf("http://%s/api/group/pnc-builds/%s/%s/maven-metadata.xml", indyHost, groupPath, artifactID)
 
-	url := fmt.Sprintf("http://%s/api/%s/%s/%s/%s/maven-metadata.xml", indyHost, repoType, repo, groupPath, artifactID)
+	printXMLResp(pncBuildsURL)
 
+	daURL := fmt.Sprintf("http://%s/api/group/DA/%s/%s/maven-metadata.xml", indyHost, groupPath, artifactID)
+
+	printXMLResp(daURL)
+
+}
+
+func printXMLResp(url string){
 	fmt.Println(url)
 
 	resp, err := http.Get(url)
@@ -37,5 +47,4 @@ func main() {
 	}
 
 	fmt.Println(string(body))
-
 }
