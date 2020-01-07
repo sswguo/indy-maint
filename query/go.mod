@@ -1,3 +1,3 @@
-module da_client
+module query
 
 go 1.13
