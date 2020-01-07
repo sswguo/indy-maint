@@ -6,17 +6,23 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 )
 
-/* Checking maven metadata: go run content_browse.go localhost:8080 */
+/* Checking maven metadata: go run maven_metadata.go localhost:8080 org.jbpm:jbpm-wb:7.30.0.Final */
 func main() {
 	indyHost := os.Args[1]
+	gav := os.Args[2]
+
+	gavSlices := strings.Split(gav, ":")
+
+	groupPath := strings.Replace(gavSlices[0], ".", "/", 1)
+	artifactID := gavSlices[1]
 
 	repoType := "hosted"
 	repo := "pnc-builds"
-	path := "/org/jbpm/jbpm-wb/maven-metadata.xml"
 
-	url := fmt.Sprintf("http://%s/api/%s/%s%s", indyHost, repoType, repo, path)
+	url := fmt.Sprintf("http://%s/api/%s/%s/%s/%s/maven-metadata.xml", indyHost, repoType, repo, groupPath, artifactID)
 
 	fmt.Println(url)
 

@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 )
 
 type LookUpReq struct {
@@ -37,8 +38,9 @@ type Versions struct {
 */
 func main() {
 	daHost := os.Args[1]
+	gav := os.Args[2]
 
-	params := BeforePost()
+	params := BeforePost(gav)
 
 	url := fmt.Sprintf("http://%s/da/rest/v-1/reports/lookup/gavs", daHost)
 	body := Post(url, params)
@@ -58,15 +60,21 @@ func main() {
 	]
 }
 */
-func BeforePost() interface{} {
+func BeforePost(gav string) interface{} {
+	gavSlices := strings.Split(gav, ":")
+
+	groupID := gavSlices[0]
+	artifactID := gavSlices[1]
+	version := gavSlices[2]
+
 	return &LookUpReq{
 		RepositoryGroup: "DA",
 		//VersionSuffix:   "",
 		Gavs: []Gavs{
 			{
-				GroupId:    "org.jbpm",
-				ArtifactId: "jbpm-wb",
-				Version:    "7.30.0.Final",
+				GroupId:    groupID,
+				ArtifactId: artifactID,
+				Version:    version,
 			},
 		},
 	}
