@@ -8,3 +8,6 @@ load folo-sealed /Users/wguo/fix/indy/a.zip -i /Users/wguo/fix/indy/infinispan.x
 5. run indy locally with the .dat files;
 6. export the records.zip from the local indy instance;
 7. import the records.zip into the prod indy instance.
+````
+curl -H "Authorization: Bearer ACCESS_TOKEN"  http://<INDY_INSTANCE>/api/folo/admin/report/import --upload-file export.zip
+````
