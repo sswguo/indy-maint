@@ -2,7 +2,7 @@
 2. sync the bak dir from server;
 3. run the Main.java with following options to check missing; 
 ````
-load folo-sealed /Users/wguo/fix/indy/a.zip -i /Users/wguo/fix/indy/infinispan.xml
+load folo-sealed --data-type json /Users/wguo/fix/indy/a.zip -i /Users/wguo/fix/indy/infinispan.xml
 ````
 4. insert into the new .dat file for the missing records;
 5. run indy locally with the .dat files;
