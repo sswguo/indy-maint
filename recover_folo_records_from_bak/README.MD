@@ -11,3 +11,8 @@ load folo-sealed --data-type json /Users/wguo/fix/indy/result.json -i /Users/wgu
 ````
 curl -H "Authorization: Bearer ACCESS_TOKEN"  http://<INDY_INSTANCE>/api/folo/admin/report/import --upload-file export.zip
 ````
+============  
+8. dump the large folo records into zip files in batch(sync the latest indy first)
+````
+dump folo-sealed <dir>/folo.zip -i <conf_dir>/infinispan.xml -b 100
+````
