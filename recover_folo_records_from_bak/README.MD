@@ -2,7 +2,7 @@
 2. sync the bak dir from server;
 3. run the Main.java with following options to check missing; 
 ````
-load folo-sealed --data-type json /Users/wguo/fix/indy/a.zip -i /Users/wguo/fix/indy/infinispan.xml
+load folo-sealed --data-type json /Users/wguo/fix/indy/result.json -i /Users/wguo/fix/indy/infinispan.xml
 ````
 4. insert into the new .dat file for the missing records;
 5. run indy locally with the .dat files;
@@ -10,4 +10,9 @@ load folo-sealed --data-type json /Users/wguo/fix/indy/a.zip -i /Users/wguo/fix/
 7. import the records.zip into the prod indy instance.
 ````
 curl -H "Authorization: Bearer ACCESS_TOKEN"  http://<INDY_INSTANCE>/api/folo/admin/report/import --upload-file export.zip
+````
+============  
+8. dump the large folo records into zip files in batch(sync the latest indy first)
+````
+dump folo-sealed <dir>/folo.zip -i <conf_dir>/infinispan.xml -b 100
 ````
