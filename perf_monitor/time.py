@@ -5,7 +5,8 @@ from time import perf_counter
 import numpy as np 
 import matplotlib.pyplot as plt
 
-url = "localhost:8080"
+localurl = "localhost:8080"
+url = "indy-perf-spmm-automation.apps.ocp4.prod.psi.redhat.com"
 
 r = requests.get('http://' + url + '/api/admin/stores/maven/remote')
 r.status_code
