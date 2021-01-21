@@ -21,7 +21,7 @@
     <local-cache name="folo-sealed" configuration="local-template">
       <persistence passivation="true">
         <!--<file-store shared="false" preload="false" fetch-state="false" path="/Users/wguo/fix/indy"/>-->
-        <file-store shared="false" preload="false" fetch-state="false" path="/Users/wguo/stage/indy/data/folo"/>
+        <file-store shared="false" preload="false" fetch-state="false" path="/Users/wguo/GitRepo/indy-maint/recover_folo_records_from_bak/folo"/>
       </persistence>
       <memory>
         <object size="1000" strategy="NONE" />
