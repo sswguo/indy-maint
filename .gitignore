@@ -1,0 +1,39 @@
+# build
+*.tar.gz
+*/target
+
+# ui build
+uis/layover/bower_components/
+uis/layover/dist/
+**/node/
+**/node_modules/
+**/build/
+**/npm-debug.log
+
+# eclipse
+.classpath
+.project
+.settings
+
+# idea
+*/.idea
+*/*.iml
+*.iws
+*.ipr
+
+# mac
+*.DS_Store
+
+# virtualenv directories (personal convention)
+.venv
+venv
+*.pyc
+*.egg-info
+
+# multibuild temporary content
+builds-*
+
+# local ftests log
+**/indy.home_IS_UNDEFINED/*
+
+*.dat
