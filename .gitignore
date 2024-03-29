@@ -37,3 +37,7 @@ builds-*
 **/indy.home_IS_UNDEFINED/*
 
 *.dat
+
+*/*.pem
+*/*.log
+*/hosts.txt
