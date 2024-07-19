@@ -26,6 +26,9 @@ RUN yum -y update && \
     yum clean all && \
     rm -rf /var/cache/yum
 
+COPY cat.crt /tmp/
+RUN cat /tmp/cat.crt >> /etc/pki/tls/certs/ca-bundle.crt
+
 # Verify installation
 RUN wget --version
 

@@ -19,12 +19,12 @@ export https_proxy=http://build-12345678+tracking:password@localhost:8082
 
 ## Running tests in the container
 ```
-wget -d --ca-certificate /cat.crt  -S https://zlib.net/fossils/zlib-1.2.13.tar.gz
+wget -d --ca-certificate /tmp/cat.crt  -S https://zlib.net/fossils/zlib-1.2.13.tar.gz
 ```
 
 _NOTE_: you can mount the certificate when building image, or you can make it during tests
 
 ```
-cat cat.crt >> /etc/pki/tls/certs/ca-bundle.crt
+cat /tmp/cat.crt >> /etc/pki/tls/certs/ca-bundle.crt
 curl -v -O https://zlib.net/fossils/zlib-1.2.13.tar.gz
 ```
