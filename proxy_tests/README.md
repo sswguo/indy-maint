@@ -1,7 +1,9 @@
-#### Guide for proxy tests
+# Guide for proxy tests
 
 This is for the tests that using `wget` or `curl` to do requests through our proxy
 There are different versions we need to cover, mainly for rhel 7, rhel 8 or even rhel 9, so we have prepared different images for this. 
+
+_NOTE_: The proxy service and other Indy services should be running for this tests. 
 
 ## Build image (specific the tag accordingly)
 `docker build . -t wget:ubi8` 
