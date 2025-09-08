@@ -83,8 +83,17 @@ delete_repos() {
     echo "Path format: {packageType}/{type}/{name}"
     echo
     
-    jq -r ".items[] | select(.name | test(\"^(hosted-|group-)\")) | \"\(.packageType // \"maven2\"):\(.type):\(.name)\"" "$INPUT_FILE" | \
-    while IFS=':' read -r packageType type name; do
+    # First collect all repositories into an array
+    repos_data=$(jq -r ".items[] | select(.name | test(\"^(hosted-|group-)\")) | \"\(.packageType // \"maven2\"):\(.type):\(.name)\"" "$INPUT_FILE")
+    
+    # Process each repository
+    while IFS= read -r line; do
+        if [ -z "$line" ]; then
+            continue
+        fi
+        
+        IFS=':' read -r packageType type name <<< "$line"
+        
         # Construct the full URL with path parameters
         FULL_URL="$POST_URL$POST_ENDPOINT/$packageType/$type/$name"
         
@@ -97,11 +106,11 @@ delete_repos() {
             echo
             echo "Repository: $name (type: $type, packageType: $packageType)"
             echo "URL: $FULL_URL"
-            echo -n "Are you sure you want to DELETE this repository? [y/N]: "
-            read -r confirmation
+            printf "Are you sure you want to DELETE this repository? [y/N]: "
+            read confirmation < /dev/tty
             
             case "$confirmation" in
-                [yY]|[yY][eE][sS])
+                y|Y|yes|YES|Yes)
                     echo "Deleting: $FULL_URL"
                     if [ -n "$AUTH_TOKEN" ]; then
                         curl -X DELETE -H "Authorization: Bearer $AUTH_TOKEN" "$FULL_URL" || echo "Failed to DELETE: $FULL_URL"
@@ -114,7 +123,7 @@ delete_repos() {
                     ;;
             esac
         fi
-    done
+    done <<< "$repos_data"
 }
 
 echo "Filtering repositories from: $INPUT_FILE"
