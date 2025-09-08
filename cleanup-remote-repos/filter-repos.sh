@@ -113,10 +113,33 @@ delete_repos() {
                 y|Y|yes|YES|Yes)
                     echo "Deleting: $FULL_URL"
                     if [ -n "$AUTH_TOKEN" ]; then
-                        curl -X DELETE -H "Authorization: Bearer $AUTH_TOKEN" "$FULL_URL" || echo "Failed to DELETE: $FULL_URL"
+                        response=$(curl -s -w "HTTPSTATUS:%{http_code}" -X DELETE -H "Authorization: Bearer $AUTH_TOKEN" "$FULL_URL")
                     else
-                        curl -X DELETE "$FULL_URL" || echo "Failed to DELETE: $FULL_URL"
+                        response=$(curl -s -w "HTTPSTATUS:%{http_code}" -X DELETE "$FULL_URL")
                     fi
+                    
+                    # Extract HTTP status code
+                    http_code=$(echo "$response" | grep -o "HTTPSTATUS:[0-9]*" | cut -d: -f2)
+                    response_body=$(echo "$response" | sed 's/HTTPSTATUS:[0-9]*$//')
+                    
+                    # Display result based on status code
+                    case "$http_code" in
+                        200|204)
+                            echo "✓ Successfully deleted: $name (HTTP $http_code)"
+                            ;;
+                        404)
+                            echo "⚠ Repository not found: $name (HTTP $http_code)"
+                            ;;
+                        401|403)
+                            echo "✗ Authorization failed: $name (HTTP $http_code)"
+                            ;;
+                        *)
+                            echo "✗ Failed to delete: $name (HTTP $http_code)"
+                            if [ -n "$response_body" ]; then
+                                echo "  Response: $response_body"
+                            fi
+                            ;;
+                    esac
                     ;;
                 *)
                     echo "Skipped deletion of: $name"
